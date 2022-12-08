@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import type { IProduct } from "./../data/products";
 
@@ -24,8 +24,8 @@ export function Product(props: ProductProps) {
         className="w-1/6"
         alt={props.product.title}
       />
-      <div>{props.product.title}</div>
-      <div className="font-bold">{props.product.price}</div>
+      <p>{props.product.title}</p>
+      <p className="font-bold">{props.product.price}</p>
       <button
         className={btnClass.join(" ")}
         onClick={() => setDetails((show) => !show)}>
@@ -35,7 +35,8 @@ export function Product(props: ProductProps) {
         <div>
           <p>{props.product.description} </p>
           <p>
-            Rate: <span className="font-bold">{props.product.rating.rate}</span>
+            Rate:{" "}
+            <span className="font-bold">{props.product?.rating?.rate}</span>
           </p>
         </div>
       )}
